@@ -68,7 +68,6 @@ class Robot extends PIXI.Container {
 		this.rotation = r;
 		this.param_go = get_nn_parameter();
 		this.sensor_range = s;
-		//this.score = 0;
 
 		// The sensors
 
@@ -180,9 +179,9 @@ class Robot extends PIXI.Container {
 			// 	//document.querySelector("#score").style.visibility = "unset";
 
 			// }
-
-			else {
-
+				
+			} else {
+        cherriesScore ++;
 				// get readings and update
 				for (let j = 0; j < this.sensors.length; j++) {
 					let s = this.sensors[j];
@@ -192,7 +191,7 @@ class Robot extends PIXI.Container {
 					if (obj instanceof Obstacle)
 						// console.log("ok");
 						this.sensor_values[j + 2] = value;
-
+    
 					//console.log(value);
 				}
 			}
@@ -332,16 +331,13 @@ class Robot extends PIXI.Container {
 		let vr;
 		let vl;
 
-		// console.log(sensors[0])
-		// console.log(this.nn_parametres[0])
-
-		vl = Math.tanh(bias_value +
+		vl = this.sigmoid(bias_value +
 			sensors[0] * this.nn_parametres[0] +
 			sensors[1] * this.nn_parametres[2] +
 			sensors[2] * this.nn_parametres[4] +
 			sensors[3] * this.nn_parametres[6]);
 
-		vr = Math.tanh(bias_value +
+		vr = this.sigmoid(bias_value +
 			sensors[0] * this.nn_parametres[1] +
 			sensors[1] * this.nn_parametres[3] +
 			sensors[2] * this.nn_parametres[5] +
@@ -352,7 +348,6 @@ class Robot extends PIXI.Container {
 		vl = this.normalize(vl);
 		console.log(vl, vr)
 
-		console.log(this.nn_parametres)
 		return [vr, vl];
 	}
 

@@ -8,4 +8,5 @@ document.getElementById("stats-page").addEventListener("click", () => {
     document.getElementsByClassName("controleurs")[1].style.display = "block";
 })
 
+
 document.getElementsByClassName("controleurs")[1].style.display = "none";
