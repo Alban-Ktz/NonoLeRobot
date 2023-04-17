@@ -142,7 +142,7 @@ class Robot extends PIXI.Container {
 
 				// eat
 				obj.relocate();
-				score++;
+				cherriesScore ++;
 
 				if (NonoLife >= 100) {
 					NonoLife == NonoLife
@@ -151,37 +151,9 @@ class Robot extends PIXI.Container {
 					document.getElementById('myBar').style.width = NonoLife + '%';
 					document.getElementById('myBar').innerHTML = NonoLife + '%';
 				}
-
-				//document.querySelector("#score").style.width = score * 0.01 * 30 + "px";
-				//document.querySelector("#score").style.visibility = "unset";
-
 			}
-			//else if (obj instanceof Obstacle &&
-
-			// 	y <  (this.robot_h+obj.height)/2 &&
-			// 	y > -(this.robot_h+obj.height)/2 
-			// 	){
-			// 	this.rotation += 0.1;
-			// 	score ++;
-
-			// 	//document.querySelector("#score").style.width = score * 0.01 * 30 + "px";
-			// 	//document.querySelector("#score").style.visibility = "unset";
-
-			// } else if (obj instanceof Obstacle &&
-			// 	x <  (this.robot_w+obj.width)/2 &&
-			// 	x > -(this.robot_w+obj.width)/2 
-
-			// 	){
-			// 	this.rotation -= 0.1;
-			// 	score ++;
-
-			// 	//document.querySelector("#score").style.width = score * 0.01 * 30 + "px";
-			// 	//document.querySelector("#score").style.visibility = "unset";
-
-			// }
-				
 			else {
-        cherriesScore ++;
+       
 				// get readings and update
 				for (let j = 0; j < this.sensors.length; j++) {
 					let s = this.sensors[j];
@@ -189,10 +161,7 @@ class Robot extends PIXI.Container {
 					if (obj instanceof Cherry)
 						this.sensor_values[j] = value;
 					if (obj instanceof Obstacle)
-						// console.log("ok");
 						this.sensor_values[j + 2] = value;
-    
-					//console.log(value);
 				}
 			}
 		}

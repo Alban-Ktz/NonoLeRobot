@@ -163,6 +163,7 @@ function init_events() {
 		tics = 0;
 		paused = false;
 		cherriesScore = 0;
+		localStorage.clear('statistics');
 
 	})
 
@@ -184,12 +185,6 @@ function game_loop(delta) {
 		let dt = delta / 60;
 		elapsed += dt;
 		tics++;
-		let currentTime = elapsed / 4;
-		//console.log(elapsed);
-		let totalTime = 100;
-		let rate = currentTime / totalTime;
-		//document.querySelector("#battery").style.width = rate * 400 + "px"
-		//document.querySelector("#pointer").style.left =  rate * 400 + "px"
 
 		// statistics update each 10 secondes
 		if ((tics / 180) >= 5) {
