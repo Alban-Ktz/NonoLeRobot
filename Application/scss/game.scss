@@ -24,6 +24,7 @@ nav {
             text-decoration: none;
             &:hover {
                 color: #ccc;
+                cursor: pointer;
             }
             }
         }
@@ -32,7 +33,7 @@ nav {
 
 .container-game {
     display:flex;
-    max-height: 800px;
+
     margin: 50px;
     font-family: 'Roboto', sans-serif;
 
@@ -94,7 +95,7 @@ nav {
         h3 {
             display: flex;
             justify-content: center;
-            padding-bottom: 10px;
+            padding: 10px 0 10px 0;
         }
     
         #myDiagramDiv{
@@ -104,7 +105,27 @@ nav {
             background-color: white;
         }
 
+        p {
+            text-align: center;
+        }
 
-}
-    
+
     }
+
+    #myBar {
+        background-color: green;
+        padding: 5px;
+    }
+
+    .option {
+        h3 {
+            display: flex;
+            justify-content: center;
+            padding-top: 10px;
+        }
+
+        border-bottom: 1px solid $white;
+        padding-bottom: 10px;
+    }
+    
+}
