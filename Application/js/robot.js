@@ -180,7 +180,7 @@ class Robot extends PIXI.Container {
 
 			// }
 				
-			} else {
+			else {
         cherriesScore ++;
 				// get readings and update
 				for (let j = 0; j < this.sensors.length; j++) {
@@ -346,7 +346,6 @@ class Robot extends PIXI.Container {
 
 		vr = this.normalize(vr);
 		vl = this.normalize(vl);
-		console.log(vl, vr)
 
 		return [vr, vl];
 	}

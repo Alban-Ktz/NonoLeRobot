@@ -152,6 +152,7 @@ nav ul li a:hover {
 .container-game #myBar {
   background-color: green;
   padding: 5px;
+  height: 15px;
 }
 .container-game .option {
   border-bottom: 1px solid #F6F6F6;
